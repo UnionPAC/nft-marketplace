@@ -63,13 +63,11 @@ export default function MyNFTs() {
   if (!loading && !nfts.length) {
     return (
       <div className="flex flex-col items-center mt-20">
-        <h3 className="text-xl font-semibold p-4">
-          You don't own any NFTs yet 😢
-        </h3>
+        <h3 className="text-xl font-semibold p-4">You don't own any NFTs yet 😢</h3>
         <p className="italic">
           Check out the{" "}
           <Link href="/">
-            <span className="text-blue-500">homepage</span>
+            <a className="text-blue-500">homepage</a>
           </Link>{" "}
           to discover cool NFTs to purchase!
         </p>
