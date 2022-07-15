@@ -1,18 +1,17 @@
 const hre = require("hardhat");
+const fs = require("fs");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  const NFTMarketplace = await hre.ethers.getContractFactory("NFTMarketplace");
+  const nftMarketplace = await NFTMarketplace.deploy();
+  await nftMarketplace.deployed();
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+  console.log("NFT Marketplace deployed to: ", nftMarketplace.address);
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  await lock.deployed();
-
-  console.log("Lock with 1 ETH deployed to:", lock.address);
+  fs.writeFileSync(
+    "./config.js",
+    `export const nftmarketaddress = "${nftMarketplace.address}"`
+  );
 }
 
 // We recommend this pattern to be able to use async/await everywhere
