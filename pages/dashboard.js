@@ -56,7 +56,7 @@ export default function Dashboard() {
   if (!loading && !nfts.length) {
     return (
       <div className="flex flex-col items-center mt-20">
-        <h3 className="text-xl font-semibold p-4">You haven't created any NFTs yet 🙈</h3>
+        <h3 className="text-xl font-semibold p-4">You haven&apos;t created any NFTs yet 🙈</h3>
         <p className="italic">
           Create your first NFT{" "}
           <Link href="/create-item">
