@@ -52,6 +52,10 @@ typechain-types
 
 #Hardhat files
 cache
-artifacts
+artifacts/*
+!artifacts/contracts
+!artifacts/contracts/*
+!artifacts/contracts/NFTMarketplace.sol
+artifacts/contracts/NFTMarketplace.sol/*
 !artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json
 
