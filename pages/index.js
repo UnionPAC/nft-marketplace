@@ -83,7 +83,7 @@ export default function Home() {
         <p className="text-xl font-semibold p-4">No items in marketplace 🙁</p>
         <p className="text-sm">
           Check back soon or{" "}
-          <a className="italic text-pink-400" href="/create-nft">
+          <a className="italic text-blue-500" href="/create-nft">
             list an item
           </a>{" "}
         </p>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 // contract address
 import { nftmarketaddress } from "../config";
@@ -67,9 +68,9 @@ export default function MyNFTs() {
         </h3>
         <p className="italic">
           Check out the{" "}
-          <a href="/" className="text-blue-500">
-            homepage
-          </a>{" "}
+          <Link href="/">
+            <span className="text-blue-500">homepage</span>
+          </Link>{" "}
           to discover cool NFTs to purchase!
         </p>
       </div>

@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import { useState, useEffect } from "react";
 import Web3Modal from "web3modal";
 import axios from "axios";
+import Link from "next/link";
 
 // contract address
 import { nftmarketaddress } from "../config";
@@ -60,9 +61,9 @@ export default function Dashboard() {
         </h3>
         <p className="italic">
           Create your first NFT{" "}
-          <a href="/create-item" className="text-blue-500">
-            here
-          </a>
+          <Link href="/create-item">
+            <span className="text-blue-500">here</span>
+          </Link>
         </p>
       </div>
     );
@@ -77,13 +78,15 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-4 mx-6">
           {nfts.map((nft, i) => (
             <div key={i} className="border shadow rounded-xl overflow-hidden">
-              <div style={{ maxWidth: '400px' }}>
+              <div style={{ maxWidth: "400px" }}>
                 <img src={nft.image} style={{ height: "100%" }} />
               </div>
 
               <div className="bg-slate-800 p-4">
                 <p className="text-lg text-white">
-                  <span className="italic mr-3 font-semibold text-base">List Price:</span>
+                  <span className="italic mr-3 font-semibold text-base">
+                    List Price:
+                  </span>
                   {nft.price} MATIC
                 </p>
               </div>
